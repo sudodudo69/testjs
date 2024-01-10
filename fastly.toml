@@ -6,6 +6,7 @@ description = "A basic expressly starter kit that demonstrates simple GET, POST,
 language = "javascript"
 manifest_version = 2
 name = "Default starter kit for expressly"
+service_id = "Wd9u7STciDWGYzCh2TQSi5"
 
 [scripts]
   build = "npm run build"

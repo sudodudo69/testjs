@@ -4,12 +4,13 @@ import { Router } from "@fastly/expressly";
 
 const router = new Router();
 
+// Proxy requests to Binance API and expose result at /api/btc
 router.get("/api/btc", async (req, res) => {
   try {
-    // Forward the request directly to the Binance API
+    // Make a request to the Binance API
     const binanceResponse = await fetch(
-      "https://api.binance.com/api/v3/depth",
-      { method: "GET", backend: "my-origin" }
+      "https://api.binance.com/api/v3/depth?limit=10&symbol=BTCUSDT",
+      { backend: "my-origin" } // You may need to adjust the backend name
     );
 
     // Pass the entire Response object through to res.send()
